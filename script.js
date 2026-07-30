@@ -1,5 +1,11 @@
 let currentMemory = 1;
+function startSurprise(){
 
+    document.querySelector(".container").classList.add("hidden");
+
+    document.getElementById("message").classList.remove("hidden");
+
+}
 function startSurprise() {
 
     const music = document.getElementById("birthdayMusic");
