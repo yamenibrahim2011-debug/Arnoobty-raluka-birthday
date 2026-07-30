@@ -84,12 +84,18 @@ button:hover {
 
 .memory-box img {
     width: 90%;
-    max-width: 500px;
+    max-width: 450px;
+    max-height: 65vh;
     height: auto;
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;
 }
-
+.memory-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 #memoryText {
     font-size: 20px;
     margin-top: 15px;
