@@ -59,7 +59,39 @@ function showMemories() {
 
     setTimeout(() => {
         document.getElementById("videos").classList.remove("hidden");
+
+showVideos();
     }, 2000);
 
 }
 }, 4000);
+}
+let currentVideo = 1;
+
+function showVideos() {
+
+    const video = document.getElementById("memoryVideo");
+    const text = document.getElementById("videoText");
+
+    video.src = "video/memory" + currentVideo + ".mp4";
+
+    video.play();
+
+
+    setInterval(() => {
+
+        currentVideo++;
+
+        if(currentVideo <= 8){
+
+            video.src = "video/memory" + currentVideo + ".mp4";
+
+            text.innerHTML = "Memory Video " + currentVideo + " 🤍";
+
+            video.play();
+
+        }
+
+    }, 10000);
+
+}
