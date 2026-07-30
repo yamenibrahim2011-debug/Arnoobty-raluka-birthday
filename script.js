@@ -38,13 +38,21 @@ function showMemories() {
 
         currentMemory++;
 
-        if(currentMemory <= 24){
+      if(currentMemory <= 24){
 
-            image.src = "photos/photo" + currentMemory + ".jpg";
+    image.style.opacity = 0;
 
-            text.innerHTML = "Memory " + currentMemory + " 🤍";
+    setTimeout(() => {
 
-        }
+        image.src = "photos/photo" + currentMemory + ".jpg";
+
+        text.innerHTML = "Memory " + currentMemory + " 🤍";
+
+        image.style.opacity = 1;
+
+    }, 1500);
+
+}
 
     }, 4000);
 
