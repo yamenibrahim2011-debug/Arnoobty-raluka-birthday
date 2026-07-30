@@ -78,25 +78,26 @@ function showVideos() {
     video.play();
 
 
-    setInterval(() => {
+    video.onended = function() {
 
-        currentVideo++;
+    currentVideo++;
 
-       if(currentVideo <= 8){
+    if(currentVideo <= 8){
 
-    video.src = "video/memory" + currentVideo + ".mp4";
+        video.src = "video/memory" + currentVideo + ".mp4";
 
-    text.innerHTML = "Memory Video " + currentVideo + " 🤍";
+        text.innerHTML = "Memory Video " + currentVideo + " 🤍";
 
-    video.play();
+        video.play();
 
-} else {
+    } else {
 
-    document.getElementById("videos").classList.add("hidden");
+        document.getElementById("videos").classList.add("hidden");
 
-    document.getElementById("finalMessage").classList.remove("hidden");
+        document.getElementById("finalMessage").classList.remove("hidden");
 
-}
-    }, 10000);
+    }
+
+}; 10000);
 
 }
