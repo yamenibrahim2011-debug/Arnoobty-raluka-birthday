@@ -126,3 +126,18 @@ button:hover {
     margin: 20px;
     animation: fadeIn 3s ease;
 }
+h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
