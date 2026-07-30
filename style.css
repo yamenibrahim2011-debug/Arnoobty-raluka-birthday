@@ -141,3 +141,19 @@ h1 {
         width: 100%;
     }
 }
+#secretMessage {
+    text-align: center;
+    font-size: 22px;
+    margin: 30px auto;
+    max-width: 600px;
+    line-height: 1.6;
+    animation: fadeIn 3s ease;
+}
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
