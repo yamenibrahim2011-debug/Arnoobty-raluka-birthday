@@ -1,17 +1,12 @@
 let currentMemory = 1;
-function startSurprise(){
+let currentVideo = 1;
 
-    document.querySelector(".container").classList.add("hidden");
 
-    document.getElementById("message").classList.remove("hidden");
-
-}
 function startSurprise() {
 
     const music = document.getElementById("birthdayMusic");
 
     music.volume = 0.5;
-
     music.play();
 
 
@@ -34,6 +29,7 @@ function startSurprise() {
 }
 
 
+
 function showMemories() {
 
     const image = document.getElementById("memoryImage");
@@ -42,75 +38,111 @@ function showMemories() {
 
     setInterval(() => {
 
-    currentMemory++;
-
-   if(currentMemory <= 24){
-
-    image.style.opacity = 0;
-
-    setTimeout(() => {
-
-        image.src = "photos/photo" + currentMemory + ".jpg";
-
-        text.innerHTML = "Memory " + currentMemory + " 🤍";
-
-        image.style.opacity = 1;
-
-    }, 1500);
+        currentMemory++;
 
 
-} else {
+        if (currentMemory <= 24) {
 
-    document.getElementById("gallery").classList.add("hidden");
 
-    setTimeout(() => {
-        document.getElementById("videos").classList.remove("hidden");
+            image.style.opacity = 0;
 
-showVideos();
-    }, 2000);
+
+            setTimeout(() => {
+
+                image.src = "photos/photo" + currentMemory + ".jpg";
+
+                text.innerHTML = "Memory " + currentMemory + " 🤍";
+
+                image.style.opacity = 1;
+
+
+            }, 1500);
+
+
+
+        } else {
+
+
+            document.getElementById("gallery").classList.add("hidden");
+
+
+            setTimeout(() => {
+
+                document.getElementById("videos").classList.remove("hidden");
+
+                showVideos();
+
+
+            }, 2000);
+
+
+        }
+
+
+    }, 4000);
 
 }
-}, 4000);
-}
-let currentVideo = 1;
+
+
+
 
 function showVideos() {
+
 
     const video = document.getElementById("memoryVideo");
     const text = document.getElementById("videoText");
 
+
     video.src = "video/memory" + currentVideo + ".mp4";
+
+    text.innerHTML = "Memory Video " + currentVideo + " 🤍";
 
     video.play();
 
 
+
     video.onended = function() {
 
-    currentVideo++;
 
-    if(currentVideo <= 8){
+        currentVideo++;
 
-        video.src = "video/memory" + currentVideo + ".mp4";
 
-        text.innerHTML = "Memory Video " + currentVideo + " 🤍";
+        if (currentVideo <= 8) {
 
-        video.play();
 
-    } else {
+            video.src = "video/memory" + currentVideo + ".mp4";
 
-        document.getElementById("videos").classList.add("hidden");
+            text.innerHTML = "Memory Video " + currentVideo + " 🤍";
 
-        document.getElementById("finalMessage").classList.remove("hidden");
+            video.play();
 
-    }
 
-}; 10000);
+
+        } else {
+
+
+            document.getElementById("videos").classList.add("hidden");
+
+            document.getElementById("finalMessage").classList.remove("hidden");
+
+
+        }
+
+
+    };
+
 
 }
+
+
+
+
 function showFinalSecret() {
+
 
     const secret = document.getElementById("secretMessage");
 
     secret.classList.remove("hidden");
+
 
 }
