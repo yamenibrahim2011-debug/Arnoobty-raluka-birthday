@@ -101,3 +101,10 @@ function showVideos() {
 }; 10000);
 
 }
+function showFinalSecret() {
+
+    const secret = document.getElementById("secretMessage");
+
+    secret.classList.remove("hidden");
+
+}
