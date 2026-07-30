@@ -38,20 +38,24 @@ function showMemories() {
 
     currentMemory++;
 
-    if(currentMemory <= 24){
+   if(currentMemory <= 24){
 
-        image.style.opacity = 0;
+    image.style.opacity = 0;
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            image.src = "photos/photo" + currentMemory + ".jpg";
+        image.src = "photos/photo" + currentMemory + ".jpg";
 
-            text.innerHTML = "Memory " + currentMemory + " 🤍";
+        text.innerHTML = "Memory " + currentMemory + " 🤍";
 
-            image.style.opacity = 1;
+        image.style.opacity = 1;
 
-        }, 1500);
+    }, 1500);
 
-    }
 
+} else {
+
+    document.getElementById("videos").classList.remove("hidden");
+
+}
 }, 4000);
