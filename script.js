@@ -19,5 +19,7 @@ function startSurprise() {
     const message = document.getElementById("message");
 
     message.classList.remove("hidden");
-
+setTimeout(() => {
+    document.getElementById("gallery").classList.remove("hidden");
+}, 10000);
 }
