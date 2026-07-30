@@ -55,7 +55,11 @@ function showMemories() {
 
 } else {
 
-    document.getElementById("videos").classList.remove("hidden");
+    document.getElementById("gallery").classList.add("hidden");
+
+    setTimeout(() => {
+        document.getElementById("videos").classList.remove("hidden");
+    }, 2000);
 
 }
 }, 4000);
