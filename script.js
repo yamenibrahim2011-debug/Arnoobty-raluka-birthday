@@ -1,21 +1,27 @@
 let currentMemory = 1;
 let currentVideo = 1;
 
+let memoryStarted = false;
+let videosStarted = false;
+
 
 function startSurprise() {
 
     const music = document.getElementById("birthdayMusic");
 
-    music.volume = 0.5;
-    music.play();
+    if (music) {
+        music.volume = 0.5;
+
+        music.play().catch(() => {
+            console.log("Music needs browser permission");
+        });
+    }
 
 
     document.querySelector(".container").style.display = "none";
 
 
-    const message = document.getElementById("message");
-
-    message.classList.remove("hidden");
+    document.getElementById("message").classList.remove("hidden");
 
 
     setTimeout(() => {
@@ -30,13 +36,20 @@ function startSurprise() {
 
 
 
+
 function showMemories() {
+
+    if (memoryStarted) return;
+
+    memoryStarted = true;
+
 
     const image = document.getElementById("memoryImage");
     const text = document.getElementById("memoryText");
 
 
     setInterval(() => {
+
 
         currentMemory++;
 
@@ -49,9 +62,11 @@ function showMemories() {
 
             setTimeout(() => {
 
+
                 image.src = "photos/photo" + currentMemory + ".jpg";
 
                 text.innerHTML = "Memory " + currentMemory + " 🤍";
+
 
                 image.style.opacity = 1;
 
@@ -68,7 +83,9 @@ function showMemories() {
 
             setTimeout(() => {
 
+
                 document.getElementById("videos").classList.remove("hidden");
+
 
                 showVideos();
 
@@ -76,7 +93,9 @@ function showMemories() {
             }, 2000);
 
 
+
         }
+
 
 
     }, 4000);
@@ -86,18 +105,44 @@ function showMemories() {
 
 
 
+
 function showVideos() {
 
 
+    if (videosStarted) return;
+
+    videosStarted = true;
+
+
+
     const video = document.getElementById("memoryVideo");
+
     const text = document.getElementById("videoText");
 
 
-    video.src = "video/memory" + currentVideo + ".mp4";
 
-    text.innerHTML = "Memory Video " + currentVideo + " 🤍";
+    function playCurrentVideo() {
 
-    video.play();
+
+        video.src = "video/memory" + currentVideo + ".mp4";
+
+        text.innerHTML = "Memory Video " + currentVideo + " 🤍";
+
+
+        video.load();
+
+        video.play().catch(() => {
+
+            console.log("Video waiting for play");
+
+        });
+
+
+    }
+
+
+
+    playCurrentVideo();
 
 
 
@@ -110,18 +155,16 @@ function showVideos() {
         if (currentVideo <= 8) {
 
 
-            video.src = "video/memory" + currentVideo + ".mp4";
-
-            text.innerHTML = "Memory Video " + currentVideo + " 🤍";
-
-            video.play();
+            playCurrentVideo();
 
 
 
         } else {
 
 
+
             document.getElementById("videos").classList.add("hidden");
+
 
             document.getElementById("finalMessage").classList.remove("hidden");
 
@@ -137,10 +180,12 @@ function showVideos() {
 
 
 
+
 function showFinalSecret() {
 
 
     const secret = document.getElementById("secretMessage");
+
 
     secret.classList.remove("hidden");
 
