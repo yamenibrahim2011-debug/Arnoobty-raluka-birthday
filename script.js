@@ -7,6 +7,10 @@ let videosStarted = false;
 
 function startSurprise() {
 
+    alert("Button works!");
+
+
+
     const music = document.getElementById("birthdayMusic");
 
     if (music) {
