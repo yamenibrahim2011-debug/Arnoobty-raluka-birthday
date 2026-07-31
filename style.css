@@ -275,3 +275,40 @@ button:hover {
     }
 
 }
+.question-card{
+
+margin-top:40px;
+
+padding:25px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+}
+
+.question-card button{
+
+display:block;
+
+width:100%;
+
+margin:15px auto;
+
+}
+
+.answer{
+
+margin-top:20px;
+
+font-size:20px;
+
+color:#ffd9f8;
+
+opacity:0;
+
+transition:.5s;
+
+font-style:italic;
+
+}
