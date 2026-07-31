@@ -1,4 +1,4 @@
-alert("script loaded");
+
 
 let currentMemory = 1;
 let currentVideo = 1;
@@ -10,8 +10,7 @@ let videosStarted = false;
 
 function startSurprise() {
 
-    alert("Button works!");
-
+    
     const music = document.getElementById("birthdayMusic");
 
     if (music) {
