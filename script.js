@@ -287,8 +287,7 @@ function startLastSurprise() {
 
 function nextQuestion(number) {
 
-    alert("Button clicked! Question " + number);
-
+    
     const current = document.getElementById("question" + number);
 
     if (current) {
