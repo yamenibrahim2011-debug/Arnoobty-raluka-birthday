@@ -242,12 +242,16 @@ function startLastSurprise() {
 
         } else {
 
-            clearInterval(interval);
+          clearInterval(interval);
 
-            // We'll add the little game here next.
-
+document.getElementById("questionSection").classList.remove("hidden");
         }
 
     }, 3500);
+
+}
+function showBirthdayKiss() {
+
+    alert("Close your eyes... 🤍\n\n3...\n2...\n1...\n\n💋 Mwah!\n\nHappy Birthday, Raluka. 🤍");
 
 }
