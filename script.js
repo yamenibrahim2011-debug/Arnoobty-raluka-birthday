@@ -255,3 +255,14 @@ function showBirthdayKiss() {
     alert("Close your eyes... 🤍\n\n3...\n2...\n1...\n\n💋 Mwah!\n\nHappy Birthday, Raluka. 🤍");
 
 }
+function answerQuestion(button, message){
+
+    const card = button.parentElement;
+
+    const answer = card.querySelector(".answer");
+
+    answer.innerHTML = message;
+
+    answer.style.opacity = 1;
+
+}
