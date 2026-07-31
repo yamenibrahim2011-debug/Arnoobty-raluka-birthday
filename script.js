@@ -1,4 +1,5 @@
 alert("script loaded");
+
 let currentMemory = 1;
 let currentVideo = 1;
 
@@ -6,20 +7,21 @@ let memoryStarted = false;
 let videosStarted = false;
 
 
+
 function startSurprise() {
 
     alert("Button works!");
 
-
-
     const music = document.getElementById("birthdayMusic");
 
     if (music) {
+
         music.volume = 0.5;
 
         music.play().catch(() => {
             console.log("Music needs browser permission");
         });
+
     }
 
 
@@ -55,7 +57,6 @@ function showMemories() {
 
     setInterval(() => {
 
-
         currentMemory++;
 
 
@@ -67,11 +68,9 @@ function showMemories() {
 
             setTimeout(() => {
 
-
                 image.src = "photos/photo" + currentMemory + ".jpg";
 
                 text.innerHTML = "Memory " + currentMemory + " 🤍";
-
 
                 image.style.opacity = 1;
 
@@ -88,19 +87,14 @@ function showMemories() {
 
             setTimeout(() => {
 
-
                 document.getElementById("videos").classList.remove("hidden");
 
-
                 showVideos();
-
 
             }, 2000);
 
 
-
         }
-
 
 
     }, 4000);
@@ -119,7 +113,6 @@ function showVideos() {
     videosStarted = true;
 
 
-
     const video = document.getElementById("memoryVideo");
 
     const text = document.getElementById("videoText");
@@ -129,12 +122,13 @@ function showVideos() {
     function playCurrentVideo() {
 
 
-       video.src = "videos/memory" + currentVideo + ".mp4";
-        
+        video.src = "videos/memory" + currentVideo + ".mp4";
+
         text.innerHTML = "Memory Video " + currentVideo + " 🤍";
 
 
         video.load();
+
 
         video.play().catch(() => {
 
@@ -163,9 +157,7 @@ function showVideos() {
             playCurrentVideo();
 
 
-
         } else {
-
 
 
             document.getElementById("videos").classList.add("hidden");
@@ -188,81 +180,157 @@ function showVideos() {
 
 function showFinalSecret() {
 
+
     document.getElementById("secretMessage").classList.remove("hidden");
+
 
     setTimeout(() => {
 
+
         document.getElementById("finalMessage").classList.add("hidden");
 
+
         document.getElementById("lastSurprise").classList.remove("hidden");
+
+
         startLastSurprise();
+
 
     }, 6000);
 
+
 }
+
+
+
+
+
 function startLastSurprise() {
+
 
     const title = document.getElementById("storyTitle");
 
+
     const messages = [
+
 
         "I still have one last surprise for you... 🤍",
 
+
         "For every smile you've given me...<br><br>Thank you. 🤍",
+
 
         "For every late-night conversation...<br><br>Thank you. 🌙",
 
+
         "For every Valorant game...<br><br>Even when we lost, I still had fun because it was with you. 🎮🤍",
+
 
         "For every Harry Potter night...<br><br>They became memories I'll always smile about. ⚡",
 
+
         "And finally...<br><br>Thank you for simply being you. ❤️"
+
 
     ];
 
+
     let index = 0;
+
 
     title.innerHTML = messages[index];
 
+
     const interval = setInterval(() => {
+
 
         index++;
 
+
         if (index < messages.length) {
+
 
             title.style.opacity = 0;
 
+
             setTimeout(() => {
+
 
                 title.innerHTML = messages[index];
 
                 title.style.opacity = 1;
 
+
             }, 500);
+
+
 
         } else {
 
-          clearInterval(interval);
 
-document.getElementById("questionSection").classList.remove("hidden");
+            clearInterval(interval);
+
+
+            document.getElementById("questionSection").classList.remove("hidden");
+
+
         }
+
 
     }, 3500);
 
-}
-function showBirthdayKiss() {
-
-    alert("Close your eyes... 🤍\n\n3...\n2...\n1...\n\n💋 Mwah!\n\nHappy Birthday, Raluka. 🤍");
 
 }
-function answerQuestion(button, message){
 
-    const card = button.parentElement;
 
-    const answer = card.querySelector(".answer");
 
-    answer.innerHTML = message;
 
-    answer.style.opacity = 1;
+
+function nextQuestion(number) {
+
+
+    const current = document.getElementById("question" + number);
+
+
+    if (current) {
+
+        current.classList.add("hidden");
+
+    }
+
+
+
+    const next = document.getElementById("question" + (number + 1));
+
+
+    if (next) {
+
+
+        next.classList.remove("hidden");
+
+
+        next.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+
+    }
+
+}
+
+
+
+
+
+function showKiss() {
+
+
+    document.getElementById("questionSection").classList.add("hidden");
+
+
+    document.getElementById("kissScreen").classList.remove("hidden");
+
 
 }
