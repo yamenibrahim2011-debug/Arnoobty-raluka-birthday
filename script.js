@@ -1,3 +1,4 @@
+alert("script loaded");
 let currentMemory = 1;
 let currentVideo = 1;
 
