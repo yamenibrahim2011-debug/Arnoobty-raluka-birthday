@@ -129,8 +129,8 @@ function showVideos() {
     function playCurrentVideo() {
 
 
-        video.src = "video/memory" + currentVideo + ".mp4";
-
+       video.src = "videos/memory" + currentVideo + ".mp4";
+        
         text.innerHTML = "Memory Video " + currentVideo + " 🤍";
 
 
