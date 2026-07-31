@@ -195,7 +195,59 @@ function showFinalSecret() {
         document.getElementById("finalMessage").classList.add("hidden");
 
         document.getElementById("lastSurprise").classList.remove("hidden");
+        startLastSurprise();
 
     }, 6000);
+
+}
+function startLastSurprise() {
+
+    const title = document.getElementById("storyTitle");
+
+    const messages = [
+
+        "I still have one last surprise for you... 🤍",
+
+        "For every smile you've given me...<br><br>Thank you. 🤍",
+
+        "For every late-night conversation...<br><br>Thank you. 🌙",
+
+        "For every Valorant game...<br><br>Even when we lost, I still had fun because it was with you. 🎮🤍",
+
+        "For every Harry Potter night...<br><br>They became memories I'll always smile about. ⚡",
+
+        "And finally...<br><br>Thank you for simply being you. ❤️"
+
+    ];
+
+    let index = 0;
+
+    title.innerHTML = messages[index];
+
+    const interval = setInterval(() => {
+
+        index++;
+
+        if (index < messages.length) {
+
+            title.style.opacity = 0;
+
+            setTimeout(() => {
+
+                title.innerHTML = messages[index];
+
+                title.style.opacity = 1;
+
+            }, 500);
+
+        } else {
+
+            clearInterval(interval);
+
+            // We'll add the little game here next.
+
+        }
+
+    }, 3500);
 
 }
