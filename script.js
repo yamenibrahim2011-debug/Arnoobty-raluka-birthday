@@ -188,11 +188,14 @@ function showVideos() {
 
 function showFinalSecret() {
 
+    document.getElementById("secretMessage").classList.remove("hidden");
 
-    const secret = document.getElementById("secretMessage");
+    setTimeout(() => {
 
+        document.getElementById("finalMessage").classList.add("hidden");
 
-    secret.classList.remove("hidden");
+        document.getElementById("lastSurprise").classList.remove("hidden");
 
+    }, 6000);
 
 }
