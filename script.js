@@ -288,16 +288,13 @@ function startLastSurprise() {
 
 function nextQuestion(number) {
 
+    alert("Button clicked! Question " + number);
 
     const current = document.getElementById("question" + number);
 
-
     if (current) {
-
         current.classList.add("hidden");
-
     }
-
 
 
     const next = document.getElementById("question" + (number + 1));
@@ -305,20 +302,16 @@ function nextQuestion(number) {
 
     if (next) {
 
-
         next.classList.remove("hidden");
 
-
         next.scrollIntoView({
-
             behavior: "smooth"
-
         });
-
 
     }
 
 }
+
 
 
 
